@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        {% csrf_token %}
+        <h1>WELCOME TO HOME PAGE.</h1>
+        <table>
+            <tr>
+                <th>name</th>
+                <th>pno</th>
+                <th>email</th>
+                <th>add</th>
+                <th>username</th>
+                <th>password</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{user.name}}</td>
+                <td>{{user.pno}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.add}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <style>
+            table,tr,th,td{
+                border: 2px solid black;
+                border-collapse: collapse;
+                border-radius: 100%;
+            }
+        </style>
+    </center>
+</body>
+</html>
